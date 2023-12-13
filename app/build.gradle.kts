@@ -47,6 +47,8 @@ dependencies {
     implementation("androidx.activity:activity-ktx:1.8.1")
     implementation("androidx.recyclerview:recyclerview:1.3.0")
     implementation("com.davemorrissey.labs:subsampling-scale-image-view-androidx:3.10.0")
+    implementation("com.github.chrisbanes:PhotoView:2.3.0")
+
     testImplementation("junit:junit:4.14-SNAPSHOT")
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")

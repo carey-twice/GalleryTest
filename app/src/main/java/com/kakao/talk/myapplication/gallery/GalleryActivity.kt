@@ -14,7 +14,9 @@ class GalleryActivity : AppCompatActivity() {
     private lateinit var binding: ActivityGalleryBinding
     private val viewModel: GalleryViewModel by viewModels()
 
-    private val adapter by lazy { GalleryAdapter() }
+    private val adapter by lazy { GalleryAdapter(type = type) }
+    private val type: Int
+        get() = intent.getIntExtra(EXTRA_TYPE, GalleryAdapter.TYPE_SUB_SAMPLING_SCALE)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -44,8 +46,11 @@ class GalleryActivity : AppCompatActivity() {
     }
 
     companion object {
-        fun newIntent(context: Context): Intent {
+        private const val EXTRA_TYPE = "type"
+
+        fun newIntent(context: Context, type: Int): Intent {
             return Intent(context, GalleryActivity::class.java)
+                .putExtra(EXTRA_TYPE, type)
         }
     }
 }
