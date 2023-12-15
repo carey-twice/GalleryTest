@@ -24,6 +24,9 @@ class MainActivity : AppCompatActivity() {
         binding.btnView2.setOnClickListener {
             startGalleryActivity(GalleryAdapter.TYPE_PHOTO_VIEW)
         }
+        binding.btnView3.setOnClickListener {
+            startGalleryActivity(GalleryAdapter.TYPE_IMAGE_VIEW)
+        }
     }
 
     private fun startGalleryActivity(type: Int) {

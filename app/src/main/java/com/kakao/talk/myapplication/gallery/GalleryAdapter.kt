@@ -32,6 +32,14 @@ class GalleryAdapter(private val type: Int = TYPE_SUB_SAMPLING_SCALE) :
                 )
             }
 
+            TYPE_IMAGE_VIEW -> {
+                Log.e("Main", "ImageViewHolder create...")
+                ImageViewHolder(
+                    LayoutInflater.from(parent.context)
+                        .inflate(R.layout.item_image_view, parent, false)
+                )
+            }
+
             else -> {
                 throw IllegalArgumentException("Invalid type")
             }
@@ -59,5 +67,6 @@ class GalleryAdapter(private val type: Int = TYPE_SUB_SAMPLING_SCALE) :
     companion object {
         const val TYPE_SUB_SAMPLING_SCALE = 0
         const val TYPE_PHOTO_VIEW = 1
+        const val TYPE_IMAGE_VIEW = 2
     }
 }
